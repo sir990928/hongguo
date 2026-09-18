@@ -4,8 +4,8 @@ plugins {
 }
 
 def buildTime = new Date()
-// 使用 yyMMddHHmm 保证不会超出 Int 上限 (例如 2609181417 < 2147483647)
-def dynamicVersionCode = buildTime.format("yyMMddHHmm").toInteger()
+// 使用 yMMddHHmm 格式保证 versionCode 不会超过 32 位 Int 最大上限 (2147483647)
+def dynamicVersionCode = buildTime.format("yMMddHHmm").toInteger()
 def dynamicVersionName = buildTime.format("yyyy-MM-dd HH:mm")
 
 android {
