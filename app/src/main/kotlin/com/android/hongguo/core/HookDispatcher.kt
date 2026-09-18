@@ -9,43 +9,41 @@ import com.android.hongguo.utils.manager.DexKitManager
 import com.android.hongguo.utils.manager.MMKVManager
 import com.android.hongguo.utils.manager.XposedManager
 import io.github.libxposed.api.XposedInterface
+import io.github.libxposed.api.XposedModule
 import io.github.libxposed.api.XposedModuleInterface
 
 /**
- * 中央调度器 - 仅红果，纯 LibXposed API
+ * 中央调度器 - 纯 LibXposed API
  */
-object HookDispatcher {
+class HookDispatcher(base: XposedInterface, param: XposedModuleInterface.ModuleLoadedParam) : XposedModule(base, param) {
 
-    private const val TAG = "HookDispatcher"
-    private const val DISPATCHER_DEBUG_LOG = false
-
-    fun dispatch(param: XposedModuleInterface.PackageLoadedParam) {
+    override fun onPackageLoaded(param: XposedModuleInterface.PackageLoadedParam) {
         val packageName = param.packageName
         if (packageName != "com.phoenix.read" && packageName != "com.phoenix.read.oversea.gp") {
-            if (DISPATCHER_DEBUG_LOG) LogUtils.logI(TAG, "非目标应用跳过 $packageName")
+            if (DISPATCHER_DEBUG_LOG) LogUtils.logI(TAG, "skip target pkg $packageName")
             return
         }
 
-        if (DISPATCHER_DEBUG_LOG) LogUtils.logI(TAG, "加载目标包 $packageName")
+        if (DISPATCHER_DEBUG_LOG) LogUtils.logI(TAG, "target pkg loaded $packageName")
 
-        param.appInfo?.sourceDir?.let { apkPath ->
+        param.appInfo.sourceDir.let { apkPath ->
             DexKitManager.init(apkPath)
         }
 
-        XposedManager.init(param, packageName)
+        XposedManager.init(base, param)
 
         XposedManager.findAndHookMethod(
             Application::class.java,
             "onCreate",
-            object : XposedInterface.BeforeAfterHookCallback {
-                override fun afterHookedMethod(hookParam: XposedInterface.HookParam) {
+            object : XposedInterface.Hooker {
+                fun afterHookedMethod(hookParam: XposedInterface.MethodHookParam) {
                     val context = hookParam.thisObject as? Context ?: return
 
                     HookContext.init(context)
                     MMKVManager.init(context)
 
                     if (DISPATCHER_DEBUG_LOG) {
-                        LogUtils.logI(TAG, "全局核心服务初始化完成")
+                        LogUtils.logI(TAG, "core service initialized")
                     }
 
                     loadHongguoHooks(param)
@@ -55,7 +53,12 @@ object HookDispatcher {
     }
 
     private fun loadHongguoHooks(param: XposedModuleInterface.PackageLoadedParam) {
-        if (DISPATCHER_DEBUG_LOG) LogUtils.logI(TAG, "执行红果模块注册")
+        if (DISPATCHER_DEBUG_LOG) LogUtils.logI(TAG, "executing module registry")
         HongguoModuleRegistry.executeAllModules(param)
+    }
+
+    companion object {
+        private const val TAG = "HookDispatcher"
+        private const val DISPATCHER_DEBUG_LOG = false
     }
 }
