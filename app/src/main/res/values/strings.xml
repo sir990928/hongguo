@@ -1,3 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">K</string>
+    <string name="app_name">Dou+</string>
+    <string name="xposed_activated">"Xposed: Activated"</string>
+    <string name="xposed_unactivated">"Xposed: Unactivated"</string>
+    <string name="menu_download_music">下载音乐</string>
+    <string name="menu_download_video">下载视频</string>
+    <string name="menu_video_info">视频信息</string>
+    <string name="menu_image_info">图片信息</string>
+    <string name="menu_settings">模块设置</string>
+    <string name="menu_about">关于模块</string>
 </resources>

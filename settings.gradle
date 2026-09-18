@@ -1,8 +1,13 @@
+// settings.gradle (最终简化版)
+
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
+        // 保留阿里云镜像用于加速
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
     }
 }
 
@@ -11,9 +16,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // 保留阿里云镜像用于加速
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        
+        // 我们不再需要JitPack了，可以把下面这行删掉！
+        // maven { url 'https://jitpack.io' }
+        // maven { url 'https://jitpack.nju.edu.cn' }
+        // maven { url 'https://jitpack.icu' }
     }
 }
 
-rootProject.name = "zonghe"
-
-include(":app")
+rootProject.name = "Dou+"
+include ':app'

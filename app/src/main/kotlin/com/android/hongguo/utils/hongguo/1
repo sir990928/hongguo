@@ -1,0 +1,184 @@
+package com.android.dou.utils.manager
+
+import org.luckypray.dexkit.DexKitBridge
+import org.luckypray.dexkit.query.*
+import org.luckypray.dexkit.query.matchers.*
+import java.util.concurrent.Executors
+import java.lang.reflect.Modifier
+
+object DexKitManager {
+    private var bridge: DexKitBridge? = null
+    private val sTP = Executors.newSingleThreadExecutor()
+    private const val DEBUG_MODE = true
+    private var isL = false; private var isI = false; private var onCacheReady: (() -> Unit)? = null
+    
+    fun setOnCacheReadyListener(listener: (() -> Unit)?) { this.onCacheReady = listener }
+    
+    private fun gT() = "D" + "e" + "x" + "U" + "l" + "t" + "r" + "a"
+    private fun sSt() = "S" + "T" + "A" + "R" + "T"
+    private fun sFi() = "F" + "I" + "N" + "I" + "S" + "H"
+    private fun sF() = "F" + "A" + "I" + "L" + "E" + "D"
+
+    private val silentNullKeys = setOf("getAutoPlayViewModel", "getMainHeight", "getLongClickFuncBtn", "getDiggComponentState", "commentDigg", "getTimeComponent", "getTopCornerLocationPosition", "getShareHeight", "getFluxComponentRootView","getPlayer")
+    private val allKeys = listOf("getPooledByteBufferFactory", "encodeLivePhoto", "HomeTabDataSourceServer", "getDragTypeValue", "getHomeTop", "getHomeBottomTabItem", "getHomePage", "RecommendFeedFetchPresenter", "getAutoPlayViewModel", "getMarkConversationReadDoRequest", "getMarkConversationReadDoMark", "TypingPresenter", "getMainHeight", "getLongClickFuncBtn", "getSharePackageBuild", "getLongClickWindowManager", "getRecallTips", "getBottomTabComponentTo", "getDiggComponentState", "commentDigg", "getCommentTopActionButtonsImageView", "getTimeComponent", "getPandaNickNameMethod", "getTopCornerLocationPosition", "TopCornerComponent", "getFeedBottomVideoGroup", "getShareHeight", "getVideoTimeText", "feedbackIcon", "getFluxComponentRootView", "getBaseListFragmentPanel", "getShareFunctionItemFunNameMethod", "getShareFunctionItem", "getShareFunctionViewHolder", "getShareDialog","MainActivity","Aweme")
+
+    fun init(apkPath: String, forceSearch: Boolean = false, onCompleted: (() -> Unit)? = null) {
+        val vK = "d" + "k" + "_" + "v" + "_" + apkPath.hashCode()
+        if (!forceSearch && !DEBUG_MODE && MMKVManager.getBoolean(vK, false)) {
+            isI = true; onCompleted?.invoke(); onCacheReady?.invoke(); return 
+        }
+        runCatching { loadSo(); bridge = DexKitBridge.create(apkPath) }.onFailure { return }
+
+        val task = Runnable {
+            try {
+                LogUtils.logI("${gT()}: >>> " + sSt()); val sTime = System.currentTimeMillis()
+                doSearch()
+                MMKVManager.putBoolean(vK, true); isI = true
+                LogUtils.logI("${gT()}: <<< " + sFi() + " " + (System.currentTimeMillis() - sTime) + "ms")
+                onCacheReady?.invoke(); onCompleted?.invoke()
+            } catch (e: Exception) { onCompleted?.invoke() }
+        }
+        if (forceSearch) sTP.execute(task) else task.run()
+    }
+
+    private fun doSearch() {
+        val b = bridge ?: return
+        save("encodeLivePhoto", fM("encodeLivePhoto old resultCode "))
+        save("HomeTabDataSourceServer", fCByStrings("HomeTabDataSourceServer"))
+        save("getDragTypeValue", fCByStrings("movable="))
+        save("getHomeTop", fMQuery(methodName = "getTopTabData", returnType = "java.util.List"))
+        save("getHomeBottomTabItem", fCByStrings("HomeBottomTabItem"))
+        save("getHomePage", fMQuery(methodName = "getBottomTabData", returnType = "java.util.List"))
+        save("getShareDialog", fM("share_dialog_rendering_time"))
+        
+        /* // 保留所有逻辑，仅修正失败的项 
+        save("getPooledByteBufferFactory", fM("Invalid MemoryChunkType"))
+        save("RecommendFeedFetchPresenter", fM("RecommendFeedFetchPresenter mModel is null."))
+        save("getMarkConversationReadDoRequest", fM("MarkConversationReadHandler doRequest local:"))
+        save("getMarkConversationReadDoMark", fM("MarkConversationReadHandler doMark local:"))
+        save("TypingPresenter", fM("Message conversation content="))
+        save("getSharePackageBuild", fMQuery(s = "type", filter = { it.contains("SharePackage") }))
+        save("getLongClickWindowManager",fC("longClickWindowManager"))
+        save("getRecallTips",  fM("FlavorService-getRecallMsgContent"))
+        save("getBottomTabComponentTo",fM(listOf("rootNode", "toTab")))
+        save("getCommentTopActionButtonsImageView", fM("allNotNull"))
+        save("getPandaNickNameMethod", fM(listOf("rootView is Illegal", "activity")))
+        save("TopCornerComponent", fM("initComponent, position="))
+        save("getFeedBottomVideoGroup", fM("action group visibility = "))
+
+        // --- 重点修正项 ---
+        save("getBaseListFragmentPanel", fMQuery(s = "activity", filter = { it.contains("BaseListFragmentPanel") }))
+        save("getShareFunctionItemFunNameMethod", fMQuery(s = "转发到{social_brand}", modifiers = Modifier.PUBLIC or Modifier.FINAL, filter = { it.contains("String") })) 
+        save("getShareFunctionItem", fMQuery(s = "share_to_daily", modifiers = Modifier.PUBLIC or Modifier.FINAL, filter = { it.contains("String") })) 
+        // ----------------
+
+        save("getShareFunctionViewHolder", fC("ShareFunctionViewHolder"))        
+        save("getVideoTimeText", fM("millisToDetailTime(...)"))
+        save("feedbackIcon", fMQuery(methodName = "onAwemeChange", requireNoStrings = true, methodCalls = listOf("getActivity")))
+        
+        save("getAutoPlayViewModel",null); save("getMainHeight",null); save("getLongClickFuncBtn",null)
+        save("getDiggComponentState",null); save("commentDigg",null); save("getTimeComponent", null)
+        save("getTopCornerLocationPosition",null); save("getShareHeight", null)*/
+        save("MainActivity" ,fMQuery(s = "boot_app_cost_create_begin" , methodCalls = listOf("onCreate")))  
+        save("Aweme",  fMQuery(methodName = "getVideo", methodCalls = listOf("getAid")))
+        save("IFluxComponentRegister", fC("com.ss.android.ugc.aweme.flux.component.IFluxComponentRegister"))
+    }
+
+    private fun fMQuery(s: String? = null, methodName: String? = null, paramTypes: List<String>? = null, classPrefix: String? = null, fieldNames: List<String>? = null, modifiers: Int = 0, returnType: String? = null, strings: List<String>? = null, requireNoStrings: Boolean = false, methodCalls: List<String>? = null, filter: ((String) -> Boolean)? = null): String? {
+        try {
+            val mm = MethodMatcher.create()
+            if (modifiers != 0) mm.modifiers(modifiers)
+            paramTypes?.let { mm.paramTypes(it) }
+            s?.let { mm.usingStrings(listOf(it)) }
+            methodName?.let { mm.name(it) }
+            returnType?.let { mm.returnType(it) }
+            strings?.let { mm.usingStrings(it) }
+            methodCalls?.forEach { c -> mm.addInvoke { name = c } }
+            if (classPrefix != null || fieldNames != null) {
+                val cm = ClassMatcher.create()
+                classPrefix?.let { cm.className(it) }
+                fieldNames?.forEach { f -> cm.addField { name = f } }
+                mm.declaredClass(cm)
+            }
+            val res = bridge?.findMethod(FindMethod.create().matcher(mm)) ?: return null
+            for (method in res) {
+                if (requireNoStrings && method.usingStrings.isNotEmpty()) continue
+                val rt = method.returnType.toString()
+                if (filter?.invoke(rt) ?: true) return method.descriptor
+            }
+        } catch (e: Exception) { }
+        return null
+    }
+
+    private fun fM(s: String): String? = fMQuery(s = s)
+    private fun fM(p: List<String>, r: String? = null): String? = fMQuery(paramTypes = p, returnType = r)
+    private fun fM(ss: List<String>): String? = fMQuery(strings = ss)
+    private fun fM(cn: String, mn: String): String? = fMQuery(classPrefix = cn, methodName = mn)
+
+    // --- 适配 2.0.7 修复：彻底回归原始写法 ---
+    private fun fC(className: String): String? {
+        val b = bridge ?: return null
+        return try {
+            val res = b.findClass(FindClass.create().matcher(ClassMatcher.create().name(className)))
+            val target = res.firstOrNull() ?: return null
+            "L${target.toString().replace(".", "/")};"
+        } catch (e: Exception) { null }
+    }
+
+    private fun fCByStrings(vararg ss: String): String? {
+        val b = bridge ?: return null
+        return try {
+            val res = b.findClass(FindClass.create().matcher(ClassMatcher.create().usingStrings(ss.toList())))
+            val target = res.firstOrNull() ?: return null
+            "L${target.toString().replace(".", "/")};"
+        } catch (e: Exception) { null }
+    }
+
+    private fun fCByPattern(p: String): String? {
+        val b = bridge ?: return null
+        return try {
+            val res = b.findClass(FindClass.create().matcher(ClassMatcher.create().className(p)))
+            val target = res.firstOrNull() ?: return null
+            "L${target.toString().replace(".", "/")};"
+        } catch (e: Exception) { null }
+    }
+
+    // 辅助 API
+    private fun fMX(s: String, mod: Int, name: String? = null, p: List<String>? = null): String? = fMQuery(s = s, modifiers = mod, methodName = name, paramTypes = p)
+    private fun fMStatic(s: String, p: List<String>? = null) = fMX(s, 8, p = p)
+    private fun fMPrivate(s: String) = fMX(s, 2)
+    private fun fMConstructor(s: String, p: List<String>? = null) = fMX(s, 0, "<init>", p)
+    private fun fMSync(s: String) = fMX(s, 32)
+    private fun fMAbstract(s: String) = fMX(s, 1024)
+    private fun fMReturnType(rt: String, s: String? = null) = fMQuery(returnType = rt, s = s)
+    private fun fMCaller(cd: String) = fMQuery(s = cd)
+    private fun fMInClass(cn: String, s: String) = fMQuery(classPrefix = cn, s = s)
+    private fun fMNative(s: String) = fMX(s, 256)
+    private fun fMFinal(s: String) = fMX(s, 16)
+    private fun fMGeneric(s: String): String? = try {
+        val res = bridge?.findMethod(FindMethod.create().matcher(MethodMatcher.create().usingStrings(listOf(s))))
+        res?.firstOrNull { it.descriptor?.contains("<") == true }?.descriptor
+    } catch (e: Exception) { null }
+    
+    private fun fMSingleton(): String? = fMQuery(methodName = "getInstance", modifiers = 9, returnType = "L.*;")
+    private fun fMBuilder(s: String = "build"): String? = fMQuery(methodName = s, returnType = "L.*Builder;")
+    private fun fMListener(): String? = fMQuery(methodName = "set.*Listener", paramTypes = listOf("L.*Listener;"))
+    private fun fMEvent(en: String): String? = fMQuery(methodName = en, paramTypes = listOf("Landroid/view/View;"))
+    private fun fMBind(s: String): String? = fMQuery(methodName = ".*bind.*", s = s)
+    private fun fMInit(s: String = "init"): String? = fMQuery(methodName = ".*$s.*", modifiers = 1)
+
+    private fun save(k: String, v: String?) {
+        if (!v.isNullOrEmpty()) {
+            LogUtils.logI("${gT()}: Saving result for '$k' -> $v")
+            MMKVManager.putString(k, v); dispatchRealtime(k, v)
+        } else {
+            if (k !in silentNullKeys) LogUtils.logW("${gT()}: [" + sF() + "] $k")
+            MMKVManager.remove(k)
+        }
+    }
+
+    private fun dispatchRealtime(k: String, v: String) { when (k) { } }
+    private fun loadSo() { if (!isL) try { System.loadLibrary("dexkit"); isL = true } catch (e: Throwable) {} }
+    fun clearCache() { allKeys.forEach { MMKVManager.remove(it) }; isI = false }
+    fun close() { try { bridge?.close() } catch (e: Exception) {}; bridge = null }
+}

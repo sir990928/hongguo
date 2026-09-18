@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/id_64080131"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_rounded_bg"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="12dp">
+
+    <!-- 导航条（圆角） -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:background="@drawable/nav_bar_rounded"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- 简单标题：左上角"视频信息"4个字，字体更大，距离更近 -->
+    <TextView
+        android:id="@id/id_640800fd"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="视频信息"
+        android:textColor="#ff111111"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff5f5f5" />
+
+    <!-- 发布地址 -->
+    <LinearLayout
+        android:id="@id/id_640800f5"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/drawable_6407004f"
+            app:attr_640301d2="#ff333333" />
+        <TextView
+            android:id="@id/id_640800fe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="发布地址"
+            android:textColor="#ff111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@id/id_64080198"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:textColor="#ff111111"
+            android:textSize="16sp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff5f5f5" />
+
+    <!-- 发布时间 -->
+    <LinearLayout
+        android:id="@id/id_640800f6"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/drawable_640700a9"
+            app:attr_640301d2="#ff333333" />
+        <TextView
+            android:id="@id/id_640800ff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="发布时间"
+            android:textColor="#ff111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@id/id_6408019a"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:textColor="#ff111111"
+            android:textSize="16sp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff5f5f5" />
+
+    <!-- 视频时长 -->
+    <LinearLayout
+        android:id="@id/id_640800f7"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/drawable_640700e9"
+            app:attr_640301d2="#ff333333" />
+        <TextView
+            android:id="@id/id_64080100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="视频时长"
+            android:textColor="#ff111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@id/id_6408019b"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="8dp"
+            android:text="-"
+            android:textColor="#ff111111"
+            android:textSize="16sp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff5f5f5" />
+
+    <!-- 视频信息（带下载按钮） -->
+    <LinearLayout
+        android:id="@id/id_640800f4"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/drawable_640700f0"
+            app:attr_640301d2="#ff333333" />
+        <TextView
+            android:id="@id/id_6408019c"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="12dp"
+            android:text="视频信息"
+            android:textColor="#ff111111"
+            android:textSize="16sp" />
+        <Button
+            android:id="@id/id_6408006f"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minWidth="60dp"
+            android:paddingHorizontal="12dp"
+            android:background="@drawable/drawable_6407007b"
+            android:text="下载"
+            android:textColor="@color/color_6405005f"
+            android:textSize="13sp" />
+    </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff5f5f5" />
+
+    <!-- 音乐信息 -->
+    <LinearLayout
+        android:id="@id/id_640800f3"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/drawable_640700aa"
+            app:attr_640301d2="#ff333333" />
+        <TextView
+            android:id="@id/id_640800fc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_marginStart="12dp"
+            android:text="音乐信息"
+            android:textColor="#ff111111"
+            android:textSize="16sp" />
+        <Button
+            android:id="@id/id_6408006e"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:minWidth="60dp"
+            android:paddingHorizontal="12dp"
+            android:background="@drawable/drawable_6407007b"
+            android:text="下载"
+            android:textColor="@color/color_6405005f"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+<!-- 作品文案 -->
+<TextView
+    android:id="@id/id_64080199"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:visibility="gone"
+    android:text=""
+    android:textColor="#ff111111"
+    android:textSize="16sp"
+    android:maxLines="2"
+    android:ellipsize="end"
+    android:textIsSelectable="true" />
+
+    <!-- 复制文案按钮 -->
+    <Button
+        android:id="@id/id_64080095"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:minWidth="60dp"
+        android:paddingHorizontal="12dp"
+        android:visibility="gone"
+        android:background="@drawable/drawable_6407007b"
+        android:text="复制文案"
+        android:textColor="@color/color_6405005f"
+        android:textSize="13sp" />
+
+</LinearLayout>

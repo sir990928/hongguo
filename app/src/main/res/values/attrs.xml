@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="MT_Bin" format="reference" />
+    <attr name="attr_64030001" format="reference" />
+    <attr name="attr_64030002" format="reference" />
+    <attr name="attr_64030003" format="dimension">
+        <enum name="id_640801da" value="0" />
+    </attr>
+    <attr name="attr_64030004" format="reference" />
+    <attr name="attr_64030005" format="reference" />
+    <attr name="attr_64030006" format="reference" />
+    <attr name="attr_64030007" format="reference" />
+    <attr name="attr_64030008" format="reference" />
+    <attr name="attr_64030009" format="reference" />
+    <attr name="attr_6403000a" format="reference" />
+    <attr name="attr_6403000b" format="reference" />
+    <attr name="attr_6403000c" format="reference" />
+    <attr name="attr_6403000d" format="reference" />
+    <attr name="attr_6403000e" format="reference" />
+    <attr name="attr_6403000f" format="reference|color" />
+    <attr name="attr_64030010" format="reference" />
+    <attr name="attr_64030011" format="reference" />
+    <attr name="attr_64030012" format="string" />
+    <attr name="attr_64030013" format="reference" />
+    <attr name="attr_64030014" format="reference" />
+    <attr name="attr_64030015" format="reference" />
+    <attr name="attr_64030016" format="reference" />
+    <attr name="attr_64030017" format="reference" />
+    <attr name="attr_64030018" format="reference" />
+    <attr name="attr_64030019" format="reference" />
+    <attr name="attr_6403001a" format="reference" />
+    <attr name="attr_6403001b" format="reference" />
+    <attr name="attr_6403001c" format="reference" />
+    <attr name="attr_6403001d" format="reference" />
+    <attr name="attr_6403001e" format="reference" />
+    <attr name="attr_6403001f" format="reference" />
+    <attr name="attr_64030020" format="reference" />
+    <attr name="attr_64030021" format="string" />
+    <attr name="attr_64030022" format="string" />
+    <attr name="attr_64030023" format="reference" />
+    <attr name="attr_64030024" format="reference" />
+    <attr name="attr_64030025" format="boolean" />
+    <attr name="attr_64030026" format="reference" />
+    <attr name="attr_64030027" format="reference" />
+    <attr name="attr_64030028" format="boolean" />
+    <attr name="attr_64030029" format="float" />
+    <attr name="attr_6403002a">
+        <flag name="MT_Bin" value="0x00000002" />
+        <flag name="id_64080001" value="0x00001000" />
+        <flag name="id_64080002" value="0x00000008" />
+        <flag name="id_64080003" value="0x00010000" />
+        <flag name="id_64080005" value="0x00000001" />
+        <flag name="id_64080009" value="0x00000004" />
+    </attr>
+    <attr name="attr_6403002b" format="reference" />
+    <attr name="attr_6403002c" format="reference" />
+    <attr name="attr_6403002d" format="boolean" />
+    <attr name="attr_6403002e">
+        <enum name="id_640800be" value="2" />
+        <enum name="id_6408017d" value="1" />
+        <enum name="id_6408017e" value="0" />
+    </attr>
+    <attr name="attr_6403002f" format="dimension" />
+    <attr name="attr_64030030" format="dimension" />
+    <attr name="attr_64030031" format="string" />
+    <attr name="attr_64030032" format="reference" />
+    <attr name="attr_64030033" format="boolean" />
+    <attr name="attr_64030034" format="dimension" />
+    <attr name="attr_64030035" format="dimension" />
+    <attr name="attr_64030036" format="reference" />
+    <attr name="attr_64030037" format="dimension" />
+    <attr name="attr_64030038">
+        <enum name="id_6408011d" value="0" />
+        <enum name="id_640801c2" value="1" />
+    </attr>
+    <attr name="attr_64030039">
+        <enum name="id_64080044" value="4" />
+        <enum name="id_64080045" value="3" />
+        <enum name="id_640800fa" value="2" />
+        <enum name="id_640800fb" value="1" />
+        <enum name="id_6408011d" value="0" />
+    </attr>
+    <attr name="attr_6403003a" format="reference" />
+    <attr name="attr_6403003b" format="reference|color" />
+    <attr name="attr_6403003c" format="reference|color" />
+    <attr name="attr_6403003d" format="color" />
+    <attr name="attr_6403003e">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_6403003f" format="dimension" />
+    <attr name="attr_64030040" format="boolean" />
+    <attr name="attr_64030041">
+        <enum name="id_64080054" value="3" />
+        <enum name="id_640800b8" value="6" />
+        <enum name="id_64080103" value="0" />
+        <enum name="id_6408013e" value="1" />
+        <enum name="id_6408017c" value="5" />
+        <enum name="id_640801a5" value="2" />
+    </attr>
+    <attr name="attr_64030042" format="dimension" />
+    <attr name="attr_64030043" format="boolean" />
+    <attr name="attr_64030044" format="reference" />
+    <attr name="attr_64030045" format="float" />
+    <attr name="attr_64030046" format="reference" />
+    <attr name="attr_64030047" format="reference" />
+    <attr name="attr_64030048" format="reference" />
+    <attr name="attr_64030049" format="reference" />
+    <attr name="attr_6403004a" format="reference" />
+    <attr name="attr_6403004b" format="reference" />
+    <attr name="attr_6403004c">
+        <flag name="id_64080054" value="0x00000050" />
+        <flag name="id_6408008b" value="0x00000010" />
+        <flag name="id_640801a5" value="0x00000030" />
+    </attr>
+    <attr name="attr_6403004d" format="dimension" />
+    <attr name="attr_6403004e" format="reference" />
+    <attr name="attr_6403004f" format="reference" />
+    <attr name="attr_64030050" format="reference" />
+    <attr name="attr_64030051" format="color" />
+    <attr name="attr_64030052">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_64030053" format="color" />
+    <attr name="attr_64030054" format="dimension" />
+    <attr name="attr_64030055" format="dimension" />
+    <attr name="attr_64030056" format="dimension" />
+    <attr name="attr_64030057" format="boolean" />
+    <attr name="attr_64030058" format="boolean" />
+    <attr name="attr_64030059" format="reference" />
+    <attr name="attr_6403005a" format="boolean" />
+    <attr name="attr_6403005b" format="reference" />
+    <attr name="attr_6403005c" format="color" />
+    <attr name="attr_6403005d">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_6403005e" format="reference" />
+    <attr name="attr_6403005f" format="reference" />
+    <attr name="attr_64030060" format="dimension" />
+    <attr name="attr_64030061">
+        <flag name="id_640800fa" value="0x00000100" />
+        <flag name="id_640800fb" value="0x00001000" />
+        <flag name="id_640801a4" value="0x00000011" />
+        <flag name="id_640801b2" value="0x00000001" />
+        <flag name="id_640801b3" value="0x00000010" />
+    </attr>
+    <attr name="attr_64030062" format="reference" />
+    <attr name="attr_64030063" format="reference" />
+    <attr name="attr_64030064" format="string" />
+    <attr name="attr_64030065" format="reference" />
+    <attr name="attr_64030066" format="color" />
+    <attr name="attr_64030067" format="color" />
+    <attr name="attr_64030068" format="color" />
+    <attr name="attr_64030069" format="color" />
+    <attr name="attr_6403006a" format="color" />
+    <attr name="attr_6403006b" format="color" />
+    <attr name="attr_6403006c" format="color" />
+    <attr name="attr_6403006d" format="reference|color" />
+    <attr name="attr_6403006e" format="color" />
+    <attr name="attr_6403006f" format="color" />
+    <attr name="attr_64030070" format="color" />
+    <attr name="attr_64030071" format="reference" />
+    <attr name="attr_64030072" format="reference" />
+    <attr name="attr_64030073" format="reference" />
+    <attr name="attr_64030074" format="reference" />
+    <attr name="attr_64030075" format="string" />
+    <attr name="attr_64030076" format="string" />
+    <attr name="attr_64030077" format="reference" />
+    <attr name="attr_64030078" format="reference" />
+    <attr name="attr_64030079" format="string" />
+    <attr name="attr_6403007a" format="dimension" />
+    <attr name="attr_6403007b" format="dimension" />
+    <attr name="attr_6403007c" format="dimension" />
+    <attr name="attr_6403007d" format="dimension" />
+    <attr name="attr_6403007e" format="dimension" />
+    <attr name="attr_6403007f" format="dimension" />
+    <attr name="attr_64030080" format="dimension" />
+    <attr name="attr_64030081" format="dimension" />
+    <attr name="attr_64030082" format="dimension" />
+    <attr name="attr_64030083" format="dimension" />
+    <attr name="attr_64030084" format="dimension" />
+    <attr name="attr_64030085" format="float" />
+    <attr name="attr_64030086" format="reference" />
+    <attr name="attr_64030087" format="float" />
+    <attr name="attr_64030088" format="reference" />
+    <attr name="attr_64030089">
+        <enum name="id_64080106" value="1" />
+        <enum name="id_64080173" value="0" />
+    </attr>
+    <attr name="attr_6403008a" format="boolean" />
+    <attr name="attr_6403008b" format="color" />
+    <attr name="attr_6403008c" format="color" />
+    <attr name="attr_6403008d" format="dimension" />
+    <attr name="attr_6403008e" format="float" />
+    <attr name="attr_6403008f" format="integer" />
+    <attr name="attr_64030090" format="reference" />
+    <attr name="attr_64030091" format="dimension" />
+    <attr name="attr_64030092" format="string" />
+    <attr name="attr_64030093" format="integer" />
+    <attr name="attr_64030094" format="string" />
+    <attr name="attr_64030095" format="reference" />
+    <attr name="attr_64030096" format="float" />
+    <attr name="attr_64030097" format="float" />
+    <attr name="attr_64030098" format="reference" />
+    <attr name="attr_64030099" format="dimension" />
+    <attr name="attr_6403009a" format="dimension" />
+    <attr name="attr_6403009b" format="reference" />
+    <attr name="attr_6403009c">
+        <flag name="id_64080054" value="0x00000004" />
+        <flag name="id_64080103" value="0x00000002" />
+        <flag name="id_6408011d" value="0x00000000" />
+        <flag name="id_6408013e" value="0x00000008" />
+        <flag name="id_640801a5" value="0x00000001" />
+    </attr>
+    <attr name="attr_6403009d" format="boolean" />
+    <attr name="attr_6403009e" format="boolean" />
+    <attr name="attr_6403009f">
+        <flag name="id_640800a7" value="0x00000020" />
+        <flag name="id_640800d3" value="0x00000004" />
+        <flag name="id_6408011d" value="0x00000000" />
+        <flag name="id_64080168" value="0x00000010" />
+        <flag name="id_64080169" value="0x00000002" />
+        <flag name="id_6408016d" value="0x00000008" />
+        <flag name="id_640801c5" value="0x00000001" />
+    </attr>
+    <attr name="attr_640300a0" format="reference" />
+    <attr name="attr_640300a1" format="reference" />
+    <attr name="attr_640300a2" format="dimension" />
+    <attr name="attr_640300a3" format="reference" />
+    <attr name="attr_640300a4">
+        <enum name="id_640800ac" value="1" />
+        <enum name="id_640800ad" value="5" />
+        <enum name="id_640800ae" value="2" />
+        <enum name="id_640800af" value="3" />
+        <enum name="id_640800b0" value="4" />
+        <enum name="id_640800b1" value="0" />
+    </attr>
+    <attr name="attr_640300a5" format="float" />
+    <attr name="attr_640300a6" format="float" />
+    <attr name="attr_640300a7">
+        <enum name="id_64080046" value="4" />
+        <enum name="id_6408009e" value="3" />
+        <enum name="id_6408011d" value="0" />
+        <enum name="id_64080128" value="1" />
+        <enum name="id_64080129" value="2" />
+        <enum name="id_6408013a" value="5" />
+    </attr>
+    <attr name="attr_640300a8" format="reference" />
+    <attr name="attr_640300a9" format="reference" />
+    <attr name="attr_640300aa" format="reference" />
+    <attr name="attr_640300ab" format="reference" />
+    <attr name="attr_640300ac" format="dimension" />
+    <attr name="attr_640300ad" format="reference" />
+    <attr name="attr_640300ae" format="color" />
+    <attr name="attr_640300af">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_640300b0" format="reference" />
+    <attr name="attr_640300b1" format="reference" />
+    <attr name="attr_640300b2" format="reference" />
+    <attr name="attr_640300b3" format="dimension" />
+    <attr name="attr_640300b4" format="integer" />
+    <attr name="attr_640300b5" format="reference" />
+    <attr name="attr_640300b6" format="reference|color" />
+    <attr name="attr_640300b7" format="reference" />
+    <attr name="attr_640300b8" format="dimension" />
+    <attr name="attr_640300b9" format="boolean" />
+    <attr name="attr_640300ba" format="reference" />
+    <attr name="attr_640300bb" format="boolean" />
+    <attr name="attr_640300bc" format="reference" />
+    <attr name="attr_640300bd" format="reference" />
+    <attr name="attr_640300be" format="reference" />
+    <attr name="attr_640300bf" format="reference" />
+    <attr name="attr_640300c0" format="dimension" />
+    <attr name="attr_640300c1" format="float" />
+    <attr name="attr_640300c2">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_640300c3" format="float" />
+    <attr name="attr_640300c4">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_640300c5">
+        <enum name="id_6408008a" value="2" />
+        <enum name="id_640800b8" value="1" />
+        <enum name="id_6408017c" value="0" />
+    </attr>
+    <attr name="attr_640300c6" format="float" />
+    <attr name="attr_640300c7" format="dimension" />
+    <attr name="attr_640300c8">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_640300c9" format="float" />
+    <attr name="attr_640300ca">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_640300cb" format="float" />
+    <attr name="attr_640300cc">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_640300cd" format="integer" />
+    <attr name="attr_640300ce" format="dimension" />
+    <attr name="attr_640300cf">
+        <enum name="id_6408004f" value="3" />
+        <enum name="id_64080054" value="1" />
+        <enum name="id_6408008a" value="2" />
+        <enum name="id_640801a5" value="0" />
+    </attr>
+    <attr name="attr_640300d0" format="float" />
+    <attr name="attr_640300d1" format="dimension" />
+    <attr name="attr_640300d2">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_640300d3">
+        <enum name="id_64080042" value="2" />
+        <enum name="id_6408008c" value="1" />
+        <enum name="id_6408011d" value="0" />
+    </attr>
+    <attr name="attr_640300d4" format="reference" />
+    <attr name="attr_640300d5" format="string" />
+    <attr name="attr_640300d6" format="string" />
+    <attr name="attr_640300d7" format="reference" />
+    <attr name="attr_640300d8" format="string" />
+    <attr name="attr_640300d9">
+        <enum name="id_64080047" value="1" />
+        <enum name="id_64080053" value="0" />
+    </attr>
+    <attr name="attr_640300da" format="integer">
+        <enum name="id_640800bf" value="-1" />
+    </attr>
+    <attr name="attr_640300db" format="string" />
+    <attr name="attr_640300dc" format="string" />
+    <attr name="attr_640300dd" format="string" />
+    <attr name="attr_640300de">
+        <enum name="id_640800f2" value="1" />
+        <enum name="id_6408011e" value="0" />
+    </attr>
+    <attr name="attr_640300df" format="string" />
+    <attr name="attr_640300e0" format="integer" />
+    <attr name="attr_640300e1" format="integer" />
+    <attr name="attr_640300e2" format="dimension" />
+    <attr name="attr_640300e3" format="reference" />
+    <attr name="attr_640300e4" format="dimension" />
+    <attr name="attr_640300e5" format="boolean" />
+    <attr name="attr_640300e6" format="reference" />
+    <attr name="attr_640300e7" format="reference" />
+    <attr name="attr_640300e8" format="reference" />
+    <attr name="attr_640300e9" format="color" />
+    <attr name="attr_640300ea">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_640300eb" format="boolean" />
+    <attr name="attr_640300ec" format="reference" />
+    <attr name="attr_640300ed" format="reference" />
+    <attr name="attr_640300ee" format="string" />
+    <attr name="attr_640300ef" format="boolean" />
+    <attr name="attr_640300f0" format="boolean" />
+    <attr name="attr_640300f1" format="boolean" />
+    <attr name="attr_640300f2" format="dimension" />
+    <attr name="attr_640300f3">
+        <enum name="id_6408009e" value="0" />
+        <enum name="id_64080127" value="2" />
+        <enum name="id_64080129" value="1" />
+    </attr>
+    <attr name="attr_640300f4" format="float" />
+    <attr name="attr_640300f5" format="dimension" />
+    <attr name="attr_640300f6" format="reference" />
+    <attr name="attr_640300f7" format="reference" />
+    <attr name="attr_640300f8">
+        <enum name="id_640800d5" value="1" />
+        <enum name="id_640800da" value="0" />
+    </attr>
+    <attr name="attr_640300f9" format="string" />
+    <attr name="attr_640300fa" format="boolean" />
+    <attr name="attr_640300fb" format="boolean" />
+    <attr name="attr_640300fc" format="integer" />
+    <attr name="attr_640300fd" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_640300fe" format="integer" />
+    <attr name="attr_640300ff" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030100" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030101" format="reference" />
+    <attr name="attr_64030102" format="integer" />
+    <attr name="attr_64030103" format="dimension" />
+    <attr name="attr_64030104" format="string" />
+    <attr name="attr_64030105" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030106" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030107" format="dimension" />
+    <attr name="attr_64030108" format="dimension" />
+    <attr name="attr_64030109" format="float" />
+    <attr name="attr_6403010a">
+        <enum name="id_6408012f" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_640801d9" value="1" />
+    </attr>
+    <attr name="attr_6403010b" format="dimension">
+        <enum name="id_640801d9" value="-2" />
+    </attr>
+    <attr name="attr_6403010c" format="dimension">
+        <enum name="id_640801d9" value="-2" />
+    </attr>
+    <attr name="attr_6403010d" format="float" />
+    <attr name="attr_6403010e" format="float" />
+    <attr name="attr_6403010f">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_64030110" format="float" />
+    <attr name="attr_64030111" format="integer" />
+    <attr name="attr_64030112" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030113" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030114" format="integer" />
+    <attr name="attr_64030115" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030116" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030117" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030118" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_64030119" format="string" />
+    <attr name="attr_6403011a" format="integer" />
+    <attr name="attr_6403011b" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_6403011c" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_6403011d" format="float" />
+    <attr name="attr_6403011e">
+        <enum name="id_64080124" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_64080176" value="1" />
+    </attr>
+    <attr name="attr_6403011f" format="float" />
+    <attr name="attr_64030120">
+        <enum name="id_6408012f" value="2" />
+        <enum name="id_64080175" value="0" />
+        <enum name="id_640801d9" value="1" />
+    </attr>
+    <attr name="attr_64030121" format="dimension">
+        <enum name="id_640801d9" value="-2" />
+    </attr>
+    <attr name="attr_64030122" format="dimension">
+        <enum name="id_640801d9" value="-2" />
+    </attr>
+    <attr name="attr_64030123" format="float" />
+    <attr name="attr_64030124" format="dimension" />
+    <attr name="attr_64030125" format="dimension" />
+    <attr name="attr_64030126" format="dimension" />
+    <attr name="attr_64030127" format="dimension" />
+    <attr name="attr_64030128" format="dimension" />
+    <attr name="attr_64030129" format="dimension" />
+    <attr name="attr_6403012a" format="dimension" />
+    <attr name="attr_6403012b" format="dimension" />
+    <attr name="attr_6403012c">
+        <flag name="id_6408004e" value="0x00000002" />
+        <flag name="id_6408007d" value="0x00000100" />
+        <flag name="id_6408008d" value="0x00000004" />
+        <flag name="id_6408009f" value="0x00000200" />
+        <flag name="id_640800a5" value="0x00000008" />
+        <flag name="id_640800a6" value="0x00000001" />
+        <flag name="id_640800c5" value="0x00000040" />
+        <flag name="id_640800c6" value="0x00000080" />
+        <flag name="id_640800c8" value="0x00000400" />
+        <flag name="id_640800c9" value="0x00000020" />
+        <flag name="id_6408011d" value="0x00000000" />
+        <flag name="id_64080137" value="0x00000010" />
+        <flag name="id_6408017b" value="0x00000101" />
+    </attr>
+    <attr name="attr_6403012d" format="reference" />
+    <attr name="attr_6403012e" format="dimension" />
+    <attr name="attr_6403012f" format="reference" />
+    <attr name="attr_64030130" format="reference" />
+    <attr name="attr_64030131" format="reference" />
+    <attr name="attr_64030132" format="reference" />
+    <attr name="attr_64030133" format="reference" />
+    <attr name="attr_64030134" format="reference" />
+    <attr name="attr_64030135" format="reference" />
+    <attr name="attr_64030136" format="reference" />
+    <attr name="attr_64030137" format="dimension" />
+    <attr name="attr_64030138" format="dimension" />
+    <attr name="attr_64030139" format="dimension" />
+    <attr name="attr_6403013a" format="dimension" />
+    <attr name="attr_6403013b" format="dimension" />
+    <attr name="attr_6403013c" format="dimension" />
+    <attr name="attr_6403013d" format="dimension" />
+    <attr name="attr_6403013e" format="boolean" />
+    <attr name="attr_6403013f" format="reference" />
+    <attr name="attr_64030140" format="string" />
+    <attr name="attr_64030141" format="float" />
+    <attr name="attr_64030142" format="dimension" />
+    <attr name="attr_64030143" format="dimension" />
+    <attr name="attr_64030144" format="dimension" />
+    <attr name="attr_64030145" format="dimension" />
+    <attr name="attr_64030146" format="float" />
+    <attr name="attr_64030147" format="dimension" />
+    <attr name="attr_64030148" format="boolean" />
+    <attr name="attr_64030149" format="reference" />
+    <attr name="attr_6403014a" format="dimension" />
+    <attr name="attr_6403014b" format="dimension" />
+    <attr name="attr_6403014c" format="dimension" />
+    <attr name="attr_6403014d" format="dimension" />
+    <attr name="attr_6403014e" format="color" />
+    <attr name="attr_6403014f" format="string" />
+    <attr name="attr_64030150" format="color" />
+    <attr name="attr_64030151" format="color" />
+    <attr name="attr_64030152" format="boolean" />
+    <attr name="attr_64030153" format="boolean" />
+    <attr name="attr_64030154">
+        <enum name="id_64080004" value="0" />
+        <enum name="id_64080006" value="3" />
+        <enum name="id_64080007" value="2" />
+        <enum name="id_64080008" value="1" />
+    </attr>
+    <attr name="attr_64030155" format="reference|string">
+        <enum name="id_64080060" value="5" />
+        <enum name="id_640800b3" value="1" />
+        <enum name="id_640800b4" value="0" />
+        <enum name="id_640800b5" value="2" />
+        <enum name="id_64080106" value="3" />
+    </attr>
+    <attr name="attr_64030156" format="float" />
+    <attr name="attr_64030157" format="float" />
+    <attr name="attr_64030158" format="float" />
+    <attr name="attr_64030159" format="reference|string" />
+    <attr name="attr_6403015a" format="boolean" />
+    <attr name="attr_6403015b" format="reference" />
+    <attr name="attr_6403015c" format="boolean" />
+    <attr name="attr_6403015d" format="reference" />
+    <attr name="attr_6403015e" format="string" />
+    <attr name="attr_6403015f" format="reference" />
+    <attr name="attr_64030160">
+        <enum name="id_64080108" value="1" />
+        <enum name="id_6408011e" value="0" />
+        <enum name="id_64080184" value="2" />
+    </attr>
+    <attr name="attr_64030161">
+        <flag name="id_640800a8" value="0x00000001" />
+        <flag name="id_640800aa" value="0x00000002" />
+        <flag name="id_6408011d" value="0x00000000" />
+    </attr>
+    <attr name="attr_64030162" format="reference" />
+    <attr name="attr_64030163">
+        <flag name="MT_Bin" value="0x00000002" />
+        <flag name="id_64080001" value="0x00001000" />
+        <flag name="id_64080002" value="0x00000008" />
+        <flag name="id_64080003" value="0x00010000" />
+        <flag name="id_64080005" value="0x00000001" />
+        <flag name="id_64080009" value="0x00000004" />
+    </attr>
+    <attr name="attr_64030164" format="string" />
+    <attr name="attr_64030165" format="boolean" />
+    <attr name="attr_64030166" format="string" />
+    <attr name="attr_64030167" format="string" />
+    <attr name="attr_64030168" format="boolean" />
+    <attr name="attr_64030169">
+        <enum name="id_64080049" value="0" />
+        <enum name="id_6408004a" value="2" />
+        <enum name="id_6408004b" value="1" />
+        <enum name="id_6408009a" value="4" />
+        <enum name="id_6408009b" value="5" />
+        <enum name="id_64080181" value="3" />
+    </attr>
+    <attr name="attr_6403016a" format="boolean" />
+    <attr name="attr_6403016b" format="boolean" />
+    <attr name="attr_6403016c" format="dimension" />
+    <attr name="attr_6403016d" format="dimension" />
+    <attr name="attr_6403016e" format="dimension" />
+    <attr name="attr_6403016f" format="dimension" />
+    <attr name="attr_64030170" format="reference" />
+    <attr name="attr_64030171" format="reference" />
+    <attr name="attr_64030172" format="dimension" />
+    <attr name="attr_64030173">
+        <enum name="id_640800be" value="3" />
+        <enum name="id_6408011d" value="0" />
+        <enum name="id_6408017d" value="2" />
+        <enum name="id_6408017e" value="1" />
+    </attr>
+    <attr name="attr_64030174" format="float" />
+    <attr name="attr_64030175" format="float" />
+    <attr name="attr_64030176" format="float" />
+    <attr name="attr_64030177" format="float" />
+    <attr name="attr_64030178" format="float" />
+    <attr name="attr_64030179" format="float" />
+    <attr name="attr_6403017a" format="reference">
+        <enum name="id_64080125" value="0" />
+    </attr>
+    <attr name="attr_6403017b">
+        <enum name="id_640800c4" value="8" />
+        <enum name="id_640800f0" value="4" />
+        <enum name="id_640801d5" value="0" />
+    </attr>
+    <attr name="attr_6403017c" format="reference" />
+    <attr name="attr_6403017d" format="reference" />
+    <attr name="attr_6403017e" format="reference" />
+    <attr name="attr_6403017f" format="boolean" />
+    <attr name="attr_64030180" format="dimension" />
+    <attr name="attr_64030181" format="reference" />
+    <attr name="attr_64030182" format="color" />
+    <attr name="attr_64030183" format="dimension" />
+    <attr name="attr_64030184" format="reference" />
+    <attr name="attr_64030185" format="string" />
+    <attr name="attr_64030186" format="reference" />
+    <attr name="attr_64030187" format="reference" />
+    <attr name="attr_64030188" format="reference" />
+    <attr name="attr_64030189" format="reference" />
+    <attr name="attr_6403018a" format="reference" />
+    <attr name="attr_6403018b" format="dimension" />
+    <attr name="attr_6403018c" format="float" />
+    <attr name="attr_6403018d" format="color" />
+    <attr name="attr_6403018e" format="dimension" />
+    <attr name="attr_6403018f" format="reference" />
+    <attr name="attr_64030190" format="dimension" />
+    <attr name="attr_64030191" format="dimension" />
+    <attr name="attr_64030192" format="dimension" />
+    <attr name="attr_64030193" format="dimension" />
+    <attr name="attr_64030194" format="boolean" />
+    <attr name="attr_64030195" format="dimension" />
+    <attr name="attr_64030196" format="float" />
+    <attr name="attr_64030197" format="float" />
+    <attr name="attr_64030198" format="reference" />
+    <attr name="attr_64030199" format="reference" />
+    <attr name="attr_6403019a" format="reference" />
+    <attr name="attr_6403019b" format="reference" />
+    <attr name="attr_6403019c" format="reference" />
+    <attr name="attr_6403019d" format="reference" />
+    <attr name="attr_6403019e" format="boolean" />
+    <attr name="attr_6403019f">
+        <flag name="id_64080043" value="0x00000002" />
+        <flag name="id_64080091" value="0x00000008" />
+        <flag name="id_640800d8" value="0x00000001" />
+        <flag name="id_6408011c" value="0x00000000" />
+        <flag name="id_640801d8" value="0x00000004" />
+    </attr>
+    <attr name="attr_640301a0">
+        <flag name="id_64080051" value="0x00000001" />
+        <flag name="id_640800b8" value="0x00000004" />
+        <flag name="id_64080114" value="0x00000002" />
+        <flag name="id_6408011d" value="0x00000000" />
+    </attr>
+    <attr name="attr_640301a1" format="boolean" />
+    <attr name="attr_640301a2" format="boolean" />
+    <attr name="attr_640301a3" format="boolean" />
+    <attr name="attr_640301a4" format="reference" />
+    <attr name="attr_640301a5" format="float" />
+    <attr name="attr_640301a6" format="integer" />
+    <attr name="attr_640301a7" format="boolean" />
+    <attr name="attr_640301a8" format="reference" />
+    <attr name="attr_640301a9" format="reference" />
+    <attr name="attr_640301aa" format="boolean" />
+    <attr name="attr_640301ab" format="reference" />
+    <attr name="attr_640301ac" format="boolean" />
+    <attr name="attr_640301ad" format="float" />
+    <attr name="attr_640301ae" format="boolean" />
+    <attr name="attr_640301af" format="reference" />
+    <attr name="attr_640301b0" format="reference" />
+    <attr name="attr_640301b1" format="string" />
+    <attr name="attr_640301b2" format="reference" />
+    <attr name="attr_640301b3" format="color" />
+    <attr name="attr_640301b4" format="reference" />
+    <attr name="attr_640301b5" format="reference" />
+    <attr name="attr_640301b6" format="dimension" />
+    <attr name="attr_640301b7" format="dimension" />
+    <attr name="attr_640301b8" format="reference" />
+    <attr name="attr_640301b9" format="reference" />
+    <attr name="attr_640301ba" format="reference" />
+    <attr name="attr_640301bb" format="color" />
+    <attr name="attr_640301bc" format="float" />
+    <attr name="attr_640301bd">
+        <enum name="id_64080101" value="0" />
+        <enum name="id_64080133" value="1" />
+        <enum name="id_6408017f" value="3" />
+        <enum name="id_64080180" value="2" />
+    </attr>
+    <attr name="attr_640301be" format="reference|boolean" />
+    <attr name="attr_640301bf" format="reference" />
+    <attr name="attr_640301c0" format="reference" />
+    <attr name="attr_640301c1" format="reference" />
+    <attr name="attr_640301c2" format="reference" />
+    <attr name="attr_640301c3" format="reference" />
+    <attr name="attr_640301c4" format="reference" />
+    <attr name="attr_640301c5" format="reference" />
+    <attr name="attr_640301c6" format="reference" />
+    <attr name="attr_640301c7" format="reference|color" />
+    <attr name="attr_640301c8" format="reference|color" />
+    <attr name="attr_640301c9" format="string" />
+    <attr name="attr_640301ca" format="reference" />
+    <attr name="attr_640301cb" format="dimension" />
+    <attr name="attr_640301cc" format="dimension" />
+    <attr name="attr_640301cd" format="color" />
+    <attr name="attr_640301ce">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_640301cf" format="reference" />
+    <attr name="attr_640301d0" format="color" />
+    <attr name="attr_640301d1">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_640301d2" format="color" />
+    <attr name="attr_640301d3">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_640301d4" format="string" />
+    <attr name="attr_640301d5" format="dimension" />
+    <attr name="attr_640301d6" format="dimension" />
+    <attr name="attr_640301d7" format="dimension" />
+    <attr name="attr_640301d8" format="dimension" />
+    <attr name="attr_640301d9" format="dimension" />
+    <attr name="attr_640301da" format="dimension" />
+    <attr name="attr_640301db" format="reference" />
+    <attr name="attr_640301dc" format="color" />
+    <attr name="attr_640301dd" format="reference" />
+    <attr name="attr_640301de" format="reference" />
+    <attr name="attr_640301df" format="reference" />
+    <attr name="attr_640301e0" format="reference|color" />
+    <attr name="attr_640301e1" format="reference" />
+    <attr name="attr_640301e2" format="string" />
+    <attr name="attr_640301e3" format="reference" />
+    <attr name="attr_640301e4">
+        <enum name="id_64080054" value="3" />
+        <enum name="id_640800b8" value="6" />
+        <enum name="id_64080103" value="1" />
+        <enum name="id_64080114" value="4" />
+        <enum name="id_6408013e" value="2" />
+        <enum name="id_6408017c" value="5" />
+        <enum name="id_640801a5" value="0" />
+    </attr>
+    <attr name="attr_640301e5" format="reference" />
+    <attr name="attr_640301e6" format="reference" />
+    <attr name="attr_640301e7" format="color" />
+    <attr name="attr_640301e8">
+        <enum name="id_64080040" value="16" />
+        <enum name="id_64080118" value="14" />
+        <enum name="id_6408014d" value="15" />
+        <enum name="id_64080178" value="9" />
+        <enum name="id_64080179" value="5" />
+        <enum name="id_6408017a" value="3" />
+    </attr>
+    <attr name="attr_640301e9" format="boolean" />
+    <attr name="attr_640301ea" format="string">
+        <enum name="id_6408000b" value="1" />
+        <enum name="id_6408009a" value="2" />
+        <enum name="id_64080106" value="3" />
+        <enum name="id_6408017b" value="0" />
+    </attr>
+    <attr name="attr_640301eb">
+        <flag name="id_64080050" value="0x00000001" />
+        <flag name="id_6408011d" value="0x00000000" />
+    </attr>
+    <attr name="attr_640301ec" format="float" />
+    <attr name="attr_640301ed" format="reference" />
+    <attr name="attr_640301ee" format="reference" />
+    <attr name="attr_640301ef" format="float" />
+    <attr name="attr_640301f0" format="integer" />
+    <attr name="attr_640301f1" format="string" />
+    <attr name="attr_640301f2">
+        <enum name="id_640800d9" value="1" />
+        <enum name="id_6408011e" value="0" />
+    </attr>
+    <attr name="attr_640301f3" format="reference" />
+    <attr name="attr_640301f4" format="float" />
+    <attr name="attr_640301f5" format="integer" />
+    <attr name="attr_640301f6" format="float|dimension" />
+    <attr name="attr_640301f7" format="float" />
+    <attr name="attr_640301f8">
+        <enum name="id_64080060" value="6" />
+        <enum name="id_64080096" value="5" />
+        <enum name="id_6408013d" value="4" />
+        <enum name="id_6408014c" value="3" />
+        <enum name="id_6408016e" value="0" />
+        <enum name="id_64080177" value="1" />
+        <enum name="id_640801b4" value="2" />
+    </attr>
+    <attr name="attr_640301f9">
+        <enum name="id_64080128" value="1" />
+        <enum name="id_64080132" value="0" />
+    </attr>
+    <attr name="attr_640301fa" format="boolean" />
+    <attr name="attr_640301fb" format="boolean" />
+    <attr name="attr_640301fc" format="boolean" />
+    <attr name="attr_640301fd" format="dimension|fraction" />
+    <attr name="attr_640301fe" format="dimension|fraction" />
+    <attr name="attr_640301ff" format="dimension|fraction" />
+    <attr name="attr_64030200" format="dimension|fraction" />
+    <attr name="attr_64030201" format="dimension|fraction" />
+    <attr name="attr_64030202" format="dimension|fraction" />
+    <attr name="attr_64030203" format="boolean" />
+</resources>

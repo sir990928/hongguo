@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView
+    android:scrollbars="none"
+    android:fadingEdge="none"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:overScrollMode="always"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/menu_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+        
+        <!-- 下载音乐 -->
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/menu_download_music"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp">
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/menu_download_music"
+                android:backgroundTint="#ff4caf50" />
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/menu_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/menu_download_music" />
+        </LinearLayout>
+        
+        <!-- 下载视频 -->
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/menu_download_video"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp">
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/menu_download_video"
+                android:backgroundTint="#ff666666" />
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/menu_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/menu_download_video" />
+        </LinearLayout>
+        
+        <!-- 视频信息 -->
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/menu_video_info"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp">
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/menu_video_info"
+                    android:scaleType="centerInside"
+                    android:backgroundTint="#ff666666" />
+                <TextView
+                    android:textSize="9sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center"
+                    android:layout_gravity="end|bottom|center"
+                    android:id="@+id/badge_video_info"
+                    android:background="@drawable/badge_background"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:text="0" />
+            </FrameLayout>
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/menu_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/menu_video_info" />
+        </LinearLayout>
+        
+        <!-- 图片信息 -->
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/menu_image_info"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp">
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/menu_image_info"
+                    android:scaleType="centerInside"
+                    android:backgroundTint="#ffff5722" />
+                <TextView
+                    android:textSize="9sp"
+                    android:textColor="#ffffffff"
+                    android:gravity="center"
+                    android:layout_gravity="end|bottom|center"
+                    android:id="@+id/badge_image_info"
+                    android:background="@drawable/badge_background"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:text="19" />
+            </FrameLayout>
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/menu_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/menu_image_info" />
+        </LinearLayout>
+        
+        <!-- 模块设置 -->
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/menu_settings"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp">
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/menu_settings"
+                android:scaleType="centerInside"
+                android:backgroundTint="#ff666666" />
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/menu_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/menu_settings" />
+        </LinearLayout>
+        
+        <!-- 关于模块 -->
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/menu_about"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/menu_about"
+                android:scaleType="centerInside"
+                android:backgroundTint="#ff666666" />
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/menu_text_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/menu_about" />
+        </LinearLayout>
+        
+    </LinearLayout>
+</HorizontalScrollView>

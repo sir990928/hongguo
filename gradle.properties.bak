@@ -1,0 +1,10 @@
+# 强制使用发布签名
+android.useAndroidX=true
+android.enableJetifier=true
+android.injected.testOnly=false
+
+# 签名配置
+android.injected.signing.store.file=/storage/emulated/0/AideProjects/Dou+/key/dou.keystore
+android.injected.signing.store.password=dou123456
+android.injected.signing.key.alias=dou
+android.injected.signing.key.password=dou123456
