@@ -4,8 +4,7 @@ plugins {
 }
 
 def buildTime = new Date()
-// 使用 yMMddHHmm 格式保证 versionCode 不会超过 32 位 Int 最大上限 (2147483647)
-def dynamicVersionCode = buildTime.format("yMMddHHmm").toInteger()
+def dynamicVersionCode = (buildTime.time / 1000).toInteger()
 def dynamicVersionName = buildTime.format("yyyy-MM-dd HH:mm")
 
 android {
