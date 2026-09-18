@@ -2,7 +2,6 @@ package com.android.hongguo.utils
 
 import android.os.Process
 import android.util.Log
-import io.github.libxposed.api.XposedBridge
 import java.io.File
 import java.io.FileWriter
 import java.io.PrintWriter
@@ -32,14 +31,14 @@ object LogUtils {
         moduleName = name
         isDebug = debug
 
-        logI("LogSystem", "日志系统启动 $moduleName")
+        logI("LogSystem", "init $moduleName")
 
         initFileLog(processName, ownerPackage)
     }
 
     fun setEnabled(enabled: Boolean) {
         isEnabled = enabled
-        logI("LogSystem", "日志状态变更 enabled=$enabled")
+        logI("LogSystem", "status changed enabled=$enabled")
     }
 
     fun isEnabled(): Boolean = isEnabled
@@ -63,12 +62,12 @@ object LogUtils {
             fileLogAvailable = true
 
             writeFileRaw("===================================")
-            writeFileRaw("日志初始化 file=${logFile?.absolutePath}")
+            writeFileRaw("init log file=${logFile?.absolutePath}")
             writeFileRaw("process=$safeProcName pid=$pid ownerPackage=$ownerPackage")
             writeFileRaw("===================================")
         }.onFailure { ex ->
             fileLogAvailable = false
-            logW("LogSystem", "文件日志初始化失败 降级为Logcat/XposedLog err=${ex.message}")
+            logW("LogSystem", "init file log failed fallback err=${ex.message}")
         }
     }
 
@@ -99,12 +98,11 @@ object LogUtils {
         writeFileRaw("$ts $level $tag: $msg")
     }
 
-    // ==================== 碎片化日志输出方法 ====================
+    // ==================== 碎片化英文日志输出方法 ====================
     fun logI(tag: String, message: String) {
         if (!isEnabled) return
         val fullMsg = "$tag: $message"
         if (isDebug) Log.i(TAG, fullMsg)
-        XposedBridge.log(fullMsg)
         writeFile("I", tag, message)
     }
 
@@ -114,7 +112,6 @@ object LogUtils {
         if (!isEnabled || !isDebug) return
         val fullMsg = "$tag: $message"
         Log.d(TAG, fullMsg)
-        XposedBridge.log(fullMsg)
         writeFile("D", tag, message)
     }
 
@@ -124,7 +121,6 @@ object LogUtils {
         if (!isEnabled) return
         val fullMsg = "$tag: $message"
         if (isDebug) Log.w(TAG, fullMsg)
-        XposedBridge.log("WARN $fullMsg")
         writeFile("W", tag, message)
     }
 
@@ -135,8 +131,6 @@ object LogUtils {
         if (!isEnabled) return
         val fullMsg = "$tag: $message"
         Log.e(TAG, fullMsg, throwable)
-        XposedBridge.log("ERR $fullMsg")
-        throwable?.let { XposedBridge.log(it) }
 
         writeFile("E", tag, message)
         throwable?.let {
@@ -150,9 +144,8 @@ object LogUtils {
 
     fun logSuccess(tag: String, message: String) {
         if (!isEnabled) return
-        val fullMsg = "$tag: 成功 $message"
+        val fullMsg = "$tag: success $message"
         if (isDebug) Log.i(TAG, fullMsg)
-        XposedBridge.log(fullMsg)
         writeFile("S", tag, message)
     }
 

@@ -32,7 +32,6 @@ class MenuModule : IHookModule {
             val currentVersion = getAppVersionCode()
             val lastSearchedVersion = MMKVManager.getLong(KEY_LAST_SEARCHED_VERSION, -1L)
 
-            // 版本变更或缓存缺失时，在后台线程触发 DexKit 动态查找类名
             if (currentVersion != lastSearchedVersion || !MMKVManager.contains(KEY_SHARE_DIALOG_CLASS)) {
                 executor.execute {
                     val foundClass = DexKitManager.findShareDialogClass()
@@ -56,52 +55,54 @@ class MenuModule : IHookModule {
     }
 
     private fun hookShareDialog(className: String, classLoader: ClassLoader) {
+        // onCreate Hook
         XposedManager.findAndHookMethod(
             className,
             classLoader,
             "onCreate",
             Bundle::class.java,
             object : XposedInterface.Hooker {
-                fun afterHookedMethod(param: XposedInterface.MethodHookParam) {
-                    val targetDialog = param.thisObject ?: return
+                override fun intercept(chain: XposedInterface.MethodHookParam): Any? {
+                    val result = chain.proceed()
+                    val targetDialog = chain.thisObject ?: return result
                     MenuActionHandler.setCurrentShareDialog(targetDialog)
 
                     MenuUIBuilder.clearCurrentMenu()
 
-                    // 延迟等弹窗布局完成渲染后注入菜单视图
                     Handler(Looper.getMainLooper()).postDelayed({
                         injectMenuToDialog(targetDialog)
                     }, 150)
+                    return result
                 }
             }
         )
 
+        // onDestroy Hook
         XposedManager.findAndHookMethod(
             className,
             classLoader,
             "onDestroy",
             object : XposedInterface.Hooker {
-                fun beforeHookedMethod(param: XposedInterface.MethodHookParam) {
+                override fun intercept(chain: XposedInterface.MethodHookParam): Any? {
                     if (MENU_MODULE_DEBUG_LOG) LogUtils.logI(TAG, "share dialog destroyed clear state")
                     MenuUIBuilder.clearCurrentMenu()
                     MenuActionHandler.clearShareDialog()
+                    return chain.proceed()
                 }
             }
         )
     }
 
-        private fun injectMenuToDialog(dialog: Any) {
+    private fun injectMenuToDialog(dialog: Any) {
         runCatching {
             val window = XposedManager.callMethod(dialog, "getWindow") ?: return
             val decorView = XposedManager.callMethod(window, "getDecorView") as? ViewGroup ?: return
 
-            // 防重复注入清理
             val existingMenu = decorView.findViewWithTag<View>(CUSTOM_MENU_TAG)
             if (existingMenu != null) {
                 (existingMenu.parent as? ViewGroup)?.removeView(existingMenu)
             }
 
-            // 获取真正的弹窗内容容器（通常是 android.R.id.content 或 DecorView 的第一个子 ViewGroup）
             val contentContainer = decorView.findViewById<ViewGroup>(android.R.id.content) 
                 ?: (decorView.getChildAt(0) as? ViewGroup) 
                 ?: decorView
@@ -110,15 +111,13 @@ class MenuModule : IHookModule {
             val ourMenuContainer = MenuUIBuilder.createAdaptiveMenuContainer(contentContainer.context, buttonCount) ?: return
             ourMenuContainer.tag = CUSTOM_MENU_TAG
 
-            // 动态加入到内容容器底部
             contentContainer.addView(ourMenuContainer)
 
-            if (MENU_MODULE_DEBUG_LOG) LogUtils.logI(TAG, "custom menu attached to content container")
+            if (MENU_MODULE_DEBUG_LOG) LogUtils.logI(TAG, "custom menu attached successfully")
         }.onFailure { e ->
             LogUtils.logE(TAG, "inject menu failed err=${e.message}", e)
         }
     }
-
 
     private fun getAppVersionCode(): Long {
         return runCatching {

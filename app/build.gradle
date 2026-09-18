@@ -102,8 +102,13 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'com.tencent:mmkv:1.3.4'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    // OkHttp 及其日志拦截器
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
 
+    // DexKit 最新版本，确保支持自动提取 Native SO 库
     implementation 'org.luckypray:dexkit:2.0.7'
 }
