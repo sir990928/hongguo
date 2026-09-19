@@ -1,8 +1,10 @@
 package com.android.hongguo.registry
 
-import com.android.hongguo.core.IHookModule
-import com.android.hongguo.menu.MenuModule
-import com.android.hongguo.utils.LogUtils
+import com.android.hongguo.probe.*
+import com.android.hongguo.modules.*
+import com.android.hongguo.core.*
+import com.android.hongguo.menu.*
+import com.android.hongguo.utils.manager.*
 import io.github.libxposed.api.XposedModuleInterface
 
 object HongguoModuleRegistry {
@@ -11,9 +13,11 @@ object HongguoModuleRegistry {
     private val moduleMap = LinkedHashMap<String, IHookModule>()
 
     init {
-        // 注册菜单模块
-        registerModule(MenuModule())
-    }
+    registerModule(MenuModule())
+    registerModule(ProbeModule)
+    registerModule(SpeedProbeModule)  
+    registerModule(AdProbeModule) // ← 加这行
+}
 
     private fun registerModule(module: IHookModule) {
         val name = module.getModuleName()

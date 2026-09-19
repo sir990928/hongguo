@@ -1,5 +1,6 @@
 package com.android.hongguo.utils
 
+import com.android.hongguo.utils.manager.*
 import android.widget.ImageView
 import android.graphics.drawable.Drawable
 

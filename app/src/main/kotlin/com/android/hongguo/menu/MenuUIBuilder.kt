@@ -2,83 +2,75 @@ package com.android.hongguo.menu
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.android.hongguo.utils.LogUtils
-import java.lang.ref.WeakReference
+import com.android.hongguo.utils.manager.*
 
 object MenuUIBuilder {
 
     private const val TAG = "MenuUIBuilder"
-    private var currentMenuRef: WeakReference<ViewGroup>? = null
+
+    fun dp(ctx: Context, v: Float): Int =
+        (v * ctx.resources.displayMetrics.density + 0.5f).toInt()
 
     /**
-     * 清理当前菜单引用
+     * 造那个"图标 + 文字 + 箭头"的模块设置行。
+     * 只管长得像菜单项、点得着；点的时候把 ctx 回调出去。
      */
-    fun clearCurrentMenu() {
-        currentMenuRef?.get()?.let { menuView ->
-            (menuView.parent as? ViewGroup)?.removeView(menuView)
-        }
-        currentMenuRef?.clear()
-        currentMenuRef = null
-    }
-
-    /**
-     * 创建自适应数量的菜单容器
-     */
-    fun createAdaptiveMenuContainer(context: Context, buttonCount: Int): ViewGroup? {
+    fun buildRow(ctx: Context, onClick: (Context) -> Unit): View? {
         return runCatching {
-            val density = context.resources.displayMetrics.density
-
-            val container = LinearLayout(context).apply {
+            val row = LinearLayout(ctx).apply {
                 orientation = LinearLayout.HORIZONTAL
                 gravity = Gravity.CENTER_VERTICAL
-                layoutParams = ViewGroup.MarginLayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-                ).apply {
-                    val marginHorizontal = (16 * density).toInt()
-                    setMargins(marginHorizontal, (8 * density).toInt(), marginHorizontal, (8 * density).toInt())
+                setPadding(dp(ctx, 16f), 0, dp(ctx, 16f), 0)
+                isClickable = true
+                isFocusable = true
+                background = GradientDrawable().apply {
+                    cornerRadius = dp(ctx, 12f).toFloat()
+                    setColor(Color.parseColor("#F5F5F5"))
                 }
+                setOnClickListener { onClick(ctx) }
             }
 
-            val itemTitles = arrayOf("选项一", "选项二", "选项三", "选项四", "选项五")
-            val actualCount = buttonCount.coerceAtMost(itemTitles.size)
-
-            for (i in 0 until actualCount) {
-                val button = createMenuItem(context, itemTitles[i], i)
-                container.addView(button)
+            // 左图标（先占位，之后换成你的资源）
+            val icon = ImageView(ctx).apply {
+                setImageResource(android.R.drawable.ic_menu_preferences)
+                layoutParams = LinearLayout.LayoutParams(dp(ctx, 24f), dp(ctx, 24f))
             }
 
-            currentMenuRef = WeakReference(container)
-            container
+            // 中间文字
+            val title = TextView(ctx).apply {
+                text = "模块设置"
+                textSize = 15f
+                setTextColor(Color.parseColor("#333333"))
+                layoutParams = LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f
+                ).apply { marginStart = dp(ctx, 12f) }
+            }
+
+            // 右箭头
+            val arrow = TextView(ctx).apply {
+                text = "›"
+                textSize = 20f
+                setTextColor(Color.parseColor("#999999"))
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+            }
+
+            row.addView(icon)
+            row.addView(title)
+            row.addView(arrow)
+            row
         }.onFailure { e ->
-            LogUtils.logE(TAG, "构建菜单容器失败 err=${e.message}", e)
+            LogUtils.logE(TAG, "buildRow failed: ${e.message}", e)
         }.getOrNull()
-    }
-
-    private fun createMenuItem(context: Context, title: String, index: Int): View {
-        val density = context.resources.displayMetrics.density
-
-        return TextView(context).apply {
-            text = title
-            textSize = 12f
-            setTextColor(Color.parseColor("#333333"))
-            gravity = Gravity.CENTER
-            setPadding(0, (8 * density).toInt(), 0, (8 * density).toInt())
-
-            layoutParams = LinearLayout.LayoutParams(
-                0,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                1f
-            )
-
-            setOnClickListener {
-                MenuActionHandler.onMenuActionClick(index)
-            }
-        }
     }
 }

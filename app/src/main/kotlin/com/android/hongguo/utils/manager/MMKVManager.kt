@@ -2,7 +2,6 @@ package com.android.hongguo.utils.manager
 
 import android.content.Context
 import com.tencent.mmkv.MMKV
-import com.android.hongguo.utils.LogUtils
 
 object MMKVManager {
     private var mmkv: MMKV? = null
@@ -16,9 +15,13 @@ object MMKVManager {
         if (isI || context == null) return
         runCatching {
             val rootDir = MMKV.initialize(context.applicationContext)
-            mmkv = MMKV.mmkvWithID(DEX_CACHE_ID, MMKV.MULTI_PROCESS_MODE); isI = true
-            if (LOG) LogUtils.logSuccess("✅ MMKV初始化成功 rootDir:$rootDir")
-        }.onFailure { if (LOG) LogUtils.logE("❌ MMKV初始化异常", it as Exception); isI = false }
+            mmkv = MMKV.mmkvWithID(DEX_CACHE_ID, MMKV.MULTI_PROCESS_MODE)
+            isI = true
+            if (LOG) LogUtils.logI("MMKV", "✅ MMKV初始化成功 rootDir:$rootDir")
+        }.onFailure { e ->
+            if (LOG) LogUtils.logE("MMKV", "❌ MMKV初始化异常", e)
+            isI = false
+        }
     }
 
     fun isAvailable(): Boolean = isI && mmkv != null
@@ -39,5 +42,11 @@ object MMKVManager {
     fun contains(k: String): Boolean = isAvailable() && mmkv?.containsKey(k) == true
     fun getMMKV(): MMKV? = mmkv
 
-    fun clearDexCache() { if (isAvailable()) { mmkv?.clearAll(); isI = false; if (LOG) LogUtils.logSuccess("✅ DexKit缓存已清空") } }
+    fun clearDexCache() { 
+        if (isAvailable()) { 
+            mmkv?.clearAll() 
+            // 注意：此处不能将 isI 设为 false，否则清理缓存后后续的读写请求会被直接拦截！
+            if (LOG) LogUtils.logI("MMKV", "✅ DexKit缓存已清空") 
+        } 
+    }
 }

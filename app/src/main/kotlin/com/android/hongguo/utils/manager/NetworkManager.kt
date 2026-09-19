@@ -7,8 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.MediaStore
 import android.widget.Toast
-import com.android.hongguo.utils.HookContext
-import com.android.hongguo.utils.LogUtils
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor

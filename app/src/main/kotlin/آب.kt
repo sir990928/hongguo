@@ -9,7 +9,9 @@ import com.android.hongguo.core.HookDispatcher
 class `آب` : XposedModule() {
 
     override fun onPackageLoaded(param: XposedModuleInterface.PackageLoadedParam) {
-        // object单例直接调用，不需要 getInstance()
+        // 1. 初始化HookDispatcher，传入XposedModule实例（关键！）
+        HookDispatcher.init(this)
+        // 2. 分发到HookDispatcher处理
         HookDispatcher.dispatch(param)
     }
 }
