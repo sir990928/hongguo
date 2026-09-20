@@ -14,7 +14,7 @@ object HongguoModuleRegistry {
 
     init {
     registerModule(MenuModule())
-    registerModule(ProbeModule)
+   // registerModule(ProbeModule)
     registerModule(SpeedProbeModule)  
     registerModule(AdProbeModule) // ← 加这行
 }
